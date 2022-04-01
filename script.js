@@ -95,7 +95,7 @@ function guess(btn){
     }
   }else {
     counter ++;
-     ;
+    playClueSequence();
     if (counter != 3){//GAME OVER: LOSE!
       loseGame();
     }
