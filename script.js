@@ -9,6 +9,7 @@ var progress = 0;
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5;
+var guessCounter = 0;
 
 
 function startGame(){
@@ -19,10 +20,22 @@ function startGame(){
     playClueSequence();
 }
 
+
+
 function stopGame(){
     gamePlaying = false;
     document.getElementById("startBtn").classList.remove("hidden");
     document.getElementById("stopBtn").classList.add("hidden");
+}
+
+function winGame(){
+  stopGame();
+  alert("Game Over. You won!.");
+}
+
+function loseGame(){
+  stopGame();
+  alert("Game Over. You lost.");
 }
 
 function lightButton(btn){
@@ -41,7 +54,7 @@ function playSingleClue(btn){
 }
 
 function playClueSequence(){
-    context.resume()
+    guessCounter = 0;
     let delay = nextClueWaitTime; //set delay to initial wait time
     for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
       console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
@@ -51,10 +64,14 @@ function playClueSequence(){
     }
   }
 
-  function loseGame(){
-    stopGame();
-    alert("Game Over. You lost.");
+function guess(btn){
+  console.log("user guessed: " + btn);
+  if(!gamePlaying){
+    return;
   }
+  
+  // add game logic here
+}
 // Sound Synthesis Functions
 const freqMap = {
     1: 261.6,
