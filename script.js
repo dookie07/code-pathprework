@@ -56,7 +56,7 @@ function playSingleClue(btn){
 
 function generatePattern(){
   pattern = []
-  for (let i=0; i < 2; i++) {
+  for (let i=0; i < 6; i++) {
     pattern.push(Math.floor(Math.random() * 4) + 1);
   }
 }
@@ -95,10 +95,11 @@ function guess(btn){
     }
   }else {
     counter ++;
-    playClueSequence();
-    if (counter == 3){//GAME OVER: LOSE!
+     ;
+    if (counter != 3){//GAME OVER: LOSE!
       loseGame();
     }
+    
   }
 }
 // Sound Synthesis Functions
