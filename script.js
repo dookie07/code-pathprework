@@ -17,10 +17,9 @@ function startGame(){
     gamePlaying = true;
     document.getElementById("startBtn").classList.add("hidden");
     document.getElementById("stopBtn").classList.remove("hidden");
+    generatePattern();
     playClueSequence();
 }
-
-
 
 function stopGame(){
     gamePlaying = false;
@@ -51,6 +50,13 @@ function playSingleClue(btn){
       playTone(btn,clueHoldTime);
       setTimeout(clearButton,clueHoldTime,btn);
     }
+}
+
+function generatePattern(){
+  pattern = []
+  for (var i = 0; i < 20; i++) {
+    pattern.push(Math.floor(Math.random() * 4) + 1);
+  }
 }
 
 function playClueSequence(){
