@@ -93,10 +93,12 @@ function guess(btn){
       //so far so good... check the next guess
       guessCounter++;
     }
-  }else{
-    //Guess was incorrect
-    //GAME OVER: LOSE!
-    loseGame();
+  }else {
+    counter ++;
+    playClueSequence();
+    if (counter == 3){//GAME OVER: LOSE!
+      loseGame();
+    }
   }
 }
 // Sound Synthesis Functions
