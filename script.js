@@ -56,7 +56,7 @@ function playSingleClue(btn){
 
 function generatePattern(){
   pattern = []
-  for (var i = 0; i < 20; i++) {
+  for (let i=0; i < 2; i++) {
     pattern.push(Math.floor(Math.random() * 4) + 1);
   }
 }
