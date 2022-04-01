@@ -4,6 +4,7 @@ const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
 
 //Global variables
+var counter = 0
 var pattern = [];
 var progress = 0; 
 var gamePlaying = false;
@@ -15,6 +16,7 @@ var guessCounter = 0;
 function startGame(){
     progress = 0;
     gamePlaying = true;
+    counter = 0;
     document.getElementById("startBtn").classList.add("hidden");
     document.getElementById("stopBtn").classList.remove("hidden");
     generatePattern();
